@@ -1,0 +1,38 @@
+import {Injectable} from 'angular2/core';
+import {Location} from "../model/model";
+var geolocation = require("nativescript-geolocation");
+//var geolib = require("geolib");
+
+@Injectable()
+export class LocationService {
+
+  private getCurrentLocation() {
+    return geolocation.getCurrentLocation({desiredAccuracy: 3, updateDistance: 10, maximumAge: 20000, timeout: 20000}).
+    then(loc => {
+      if (loc) {
+        console.log('LOCATION:', JSON.stringify(loc));
+        return loc;
+      } else {
+        console.log('NO LOCATION');
+      }
+    }, (e) => {
+      console.log("Error in LOCATION: " + e.message);
+    });
+  }
+
+  private getCurrentLocationMock(): Promise<Location> {
+    return Promise.resolve({latitude: 32.0972303, longitude: 34.77386999999999}); //wix
+  }
+
+  getDistanceFromCurrentLocation(location: Location) {
+    //if (!geolocation.isEnabled()) {
+    //  geolocation.enableLocationRequest();
+    //  return Promise.resolve(-1);
+    //} else {
+      return this.getCurrentLocationMock().then(currentLoc => {
+        console.log('in getCurrentLocationMock', geolocation.distance(currentLoc, location));
+        return geolocation.distance(currentLoc, location);
+      });
+    //}
+  }
+}

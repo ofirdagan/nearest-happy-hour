@@ -1,5 +1,18 @@
 ﻿.title {
-    font-size: 30;
-    horizontal-align: center;
-    margin:20;
+  font-size: 20;
+  horizontal-align: center;
+  margin: 20;
+}
+
+.bar-icon {
+  width: 100;
+  height: 100;
+}
+
+.bar-title {
+  font-size: 30;
+}
+
+.bar-item {
+  margin-bottom: 30;
 }

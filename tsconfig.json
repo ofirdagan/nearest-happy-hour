@@ -15,9 +15,13 @@
     "app/compat.d.ts",
     "app/app.component.ts",
     "app/model/model.ts",
+    "app/mocks/mock-bars.ts",
     "app/services/bars.service.ts",
+    "app/services/location.service.ts",
     "app/components/bar-list.component.ts",
     "app/components/bar.component.ts",
+    "app/pipes/distance-renderer.pipe.ts",
+    "app/pipes/order-by.pipe.ts",
     "node_modules/tns-core-modules/tns-core-modules.d.ts"
   ],
   "filesGlob": [
