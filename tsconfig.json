@@ -1,27 +1,31 @@
 {
-    "compilerOptions": {
-        "outDir": "app",
-        "rootDir": "app",
-        "module": "commonjs",
-        "target": "es5",
-        "inlineSourceMap": true,
-        "experimentalDecorators": true,
-        "removeComments": false,
-        "emitDecoratorMetadata": true,
-        "noEmitOnError": true
-    },
-    "files": [
-        "app/main.ts",
-        "app/compat.d.ts",
-        "app/app.component.ts",
-        "node_modules/tns-core-modules/tns-core-modules.d.ts"
-    ],
-    "filesGlob": [
-        "node_modules/tns-core-modules/tns-core-modules.d.ts",
-        "app/**/*.ts"
-    ],
-    "exclude": [
-        "node_modules",
-        "platforms"
-    ]
+  "compilerOptions": {
+    "outDir": "app",
+    "rootDir": "app",
+    "module": "commonjs",
+    "target": "es5",
+    "inlineSourceMap": true,
+    "experimentalDecorators": true,
+    "removeComments": false,
+    "emitDecoratorMetadata": true,
+    "noEmitOnError": true
+  },
+  "files": [
+    "app/main.ts",
+    "app/compat.d.ts",
+    "app/app.component.ts",
+    "app/model/model.ts",
+    "app/services/bars.service.ts",
+    "app/components/bar-list.component.ts",
+    "app/components/bar.component.ts",
+    "node_modules/tns-core-modules/tns-core-modules.d.ts"
+  ],
+  "filesGlob": [
+    "node_modules/tns-core-modules/tns-core-modules.d.ts",
+    "app/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "platforms"
+  ]
 }
