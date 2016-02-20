@@ -8,11 +8,11 @@ import {DistanceRendererPipe} from "../pipes/distance-renderer.pipe";
   providers: [LocationService],
   pipes: [DistanceRendererPipe],
   template: `
-    <GridLayout columns="auto, *, auto" rows="auto">
-        <Image col="0" [src]="bar.imageUrl" class="bar-icon"></Image>
-        <Label col="1" [text]="bar.name" class="bar-title"></Label>
-        <Label col="2" [text]="bar.distance | distanceRenderer"></Label>
-    </GridLayout>
+<GridLayout columns="auto, *, auto" rows="auto">
+    <Image col="0" [src]="bar.imageUrl" class="bar-icon"></Image>
+    <Label col="1" [text]="bar.name" class="bar-title"></Label>
+    <Label col="2" [text]="bar.distance | distanceRenderer"></Label>
+</GridLayout>
 `
 })
 export class BarComponent{

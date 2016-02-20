@@ -5,6 +5,7 @@ export interface Location {
 
 export class BarDto {
   constructor(
+  public id: string,
   public name: string,
   public imageUrl: string,
   public location: Location,
@@ -12,11 +13,12 @@ export class BarDto {
 }
 export class Bar extends BarDto{
   constructor(
+  public id: string,
   public name: string,
   public imageUrl: string,
   public location: Location,
   public rating: number,
   public distance: number) {
-    super(name, imageUrl, location, rating);
+    super(id, name, imageUrl, location, rating);
   }
 }

@@ -19,6 +19,7 @@
     "app/services/bars.service.ts",
     "app/services/location.service.ts",
     "app/services/page-manager.service.ts",
+    "app/services/happy-hour-api.service.ts",
     "app/components/bar-list.component.ts",
     "app/components/bar.component.ts",
     "app/components/list-page/list-page.component.ts",

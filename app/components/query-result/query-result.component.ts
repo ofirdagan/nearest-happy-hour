@@ -21,7 +21,7 @@ export class QueryResult{
 
   addBar() {
     let data = this.data;
-    this.barsService.addBar(data.name, data.picture.data.url, {latitude: data.location.latitude, longitude: data.location.longitude});
+    this.barsService.addBar(data.id, data.name, data.picture.data.url, {latitude: data.location.latitude, longitude: data.location.longitude});
     this.pageManager.goTo(PAGE.list);
   }
 }

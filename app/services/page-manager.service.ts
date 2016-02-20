@@ -8,7 +8,7 @@ export enum PAGE {
 
 @Injectable()
 export class PageManager {
-  private page: PAGE = PAGE.addBar;
+  private page: PAGE = PAGE.list;
 
   getCurrent(): PAGE {
     return this.page;

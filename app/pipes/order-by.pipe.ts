@@ -10,7 +10,7 @@ export class OrderBy implements PipeTransform {
 
   transform(input: Object[], [field, desc = false]: [string, boolean]): Object[] {
     if (input && field) {
-      return Array.from(input).sort((a: Object, b: Object) => {
+      return input.sort((a: Object, b: Object) => { //used to be Array.from(input)
         if (_.get(a, field) < _.get(b, field)) {
           return desc ? 1 : -1;
         }

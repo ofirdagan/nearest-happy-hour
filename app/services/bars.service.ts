@@ -1,34 +1,38 @@
-import {Injectable} from 'angular2/core';
-import {BARS} from '../mocks/mock-bars';
+import {Injectable, NgZone} from 'angular2/core';
 import {LocationService} from "./location.service";
 import {Bar, BarDto} from "../model/model";
 import {Location} from "../model/model";
+import {HappyHourApi} from "./happy-hour-api.service";
+var firebase = require("nativescript-plugin-firebase");
+
 
 @Injectable()
 export class BarsService {
-  private bars: BarDto[];
-  constructor(private location: LocationService) {
-    this.bars = BARS;
+  public bars: Bar[];
+
+  constructor(private location: LocationService, private ngZone: NgZone, private happyHourApi: HappyHourApi) {
+    this.bars = [];
   }
 
-  getBars(): any {
-    let promise = new Promise((resolve) => {
-      let distances = this.bars.map((barDto: BarDto) => this.getBarDistance(barDto));
-      let bars = Promise.all(distances).then(barDistances => {
-        return this.bars.map((barDto: BarDto, index: number) => {
-          return new Bar(barDto.name, barDto.imageUrl, barDto.location, barDto.rating, barDistances[index]);
-        });
+  onBarFetched(barDto: BarDto) {
+    this.getBarDistance(barDto).then((distance) => {
+      let bar = new Bar(barDto.id, barDto.name, barDto.imageUrl, barDto.location, barDto.rating, distance);
+      this.ngZone.run(() => {
+        console.log('onBarFetched: ', barDto.name);
+        this.bars.push(bar);
       });
-      resolve(bars);
     });
-    return promise;
+  }
+
+  fetchBars(): void {
+    this.happyHourApi.getBarsFromDB(this.onBarFetched.bind(this));
   }
 
   getBarDistance(barDto) {
     return this.location.getDistanceFromCurrentLocation(barDto.location);
   }
 
-  addBar(name: string, url: string, location: Location) {
-    this.bars.push(new BarDto(name, url, location, 0));
+  addBar(id: string, name: string, url: string, location: Location) {
+    this.happyHourApi.saveBar(new BarDto(id, name, url, location, 0));
   }
 }
