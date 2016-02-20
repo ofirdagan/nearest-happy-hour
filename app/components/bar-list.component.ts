@@ -2,7 +2,7 @@ import {Component, OnInit, NgZone} from "angular2/core";
 import {BarComponent} from "./bar.component";
 import {BarsService} from "../services/bars.service";
 import {Bar} from "../model/model";
-import {OrderBy, TestPipe} from "../pipes/order-by.pipe";
+import {OrderBy} from "../pipes/order-by.pipe";
 
 @Component({
   selector: "BarList",
