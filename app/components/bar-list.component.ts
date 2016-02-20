@@ -10,16 +10,15 @@ import {OrderBy} from "../pipes/order-by.pipe";
   providers: [BarsService],
   pipes: [OrderBy],
   template: `
-  <StackLayout orientation="vertical">
-    <Bar class="bar-item" *ngFor="#bar of bars | orderBy:'distance':false" [bar]="bar"></Bar>
-  </StackLayout>
+<StackLayout orientation="vertical">
+  <Bar class="bar-item" *ngFor="#bar of bars | orderBy:'distance':false" [bar]="bar"></Bar>
+</StackLayout>
 `,
 
 })
 
 export class BarListComponent /*implements OnInit */{
   public bars: Bar[];
-  public foo = 'doo';
   constructor(private barsService: BarsService) {
     this.getBars();  //FIXME: I can't seem to move it to ngOnInit
     //this.bars = [];
@@ -31,7 +30,6 @@ export class BarListComponent /*implements OnInit */{
 
   getBars() {
     this.barsService.getBars().then(bars => {
-      alert(this.foo);
       this.bars = bars;
     });
   }

@@ -3,17 +3,20 @@ export interface Location {
   longitude: number
 }
 
-export interface BarDto {
-  name: string;
-  imageUrl: string;
-  location: Location;
-  rating: number;
+export class BarDto {
+  constructor(
+  public name: string,
+  public imageUrl: string,
+  public location: Location,
+  public rating: number) {}
 }
-export class Bar implements BarDto{
+export class Bar extends BarDto{
   constructor(
   public name: string,
   public imageUrl: string,
   public location: Location,
   public rating: number,
-  public distance: number) {}
+  public distance: number) {
+    super(name, imageUrl, location, rating);
+  }
 }

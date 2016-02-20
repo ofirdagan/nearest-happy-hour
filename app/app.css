@@ -16,3 +16,13 @@
 .bar-item {
   margin-bottom: 30;
 }
+
+.fab {
+  margin: 0 16 28 16;
+}
+
+.fabContainer {
+  vertical-align: bottom;
+  horizontal-align: right;
+}
+

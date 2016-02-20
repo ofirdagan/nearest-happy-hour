@@ -18,8 +18,12 @@
     "app/mocks/mock-bars.ts",
     "app/services/bars.service.ts",
     "app/services/location.service.ts",
+    "app/services/page-manager.service.ts",
     "app/components/bar-list.component.ts",
     "app/components/bar.component.ts",
+    "app/components/list-page/list-page.component.ts",
+    "app/components/add-bar/add-bar.page.component.ts",
+    "app/components/query-result/query-result.component.ts",
     "app/pipes/distance-renderer.pipe.ts",
     "app/pipes/order-by.pipe.ts",
     "node_modules/tns-core-modules/tns-core-modules.d.ts"

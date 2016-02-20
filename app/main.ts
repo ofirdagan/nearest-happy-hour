@@ -3,5 +3,6 @@ import {nativeScriptBootstrap} from "nativescript-angular/application";
 import {AppComponent} from "./app.component";
 import {LocationService} from "./services/location.service";
 import {BarsService} from "./services/bars.service";
+import {PageManager} from "./services/page-manager.service";
 
-nativeScriptBootstrap(AppComponent, [LocationService, BarsService]);
+nativeScriptBootstrap(AppComponent, [LocationService, BarsService, PageManager]);

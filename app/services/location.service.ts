@@ -6,7 +6,7 @@ var geolocation = require("nativescript-geolocation");
 @Injectable()
 export class LocationService {
 
-  private getCurrentLocation() {
+  private getCurrentLocationReal() {
     return geolocation.getCurrentLocation({desiredAccuracy: 3, updateDistance: 10, maximumAge: 20000, timeout: 20000}).
     then(loc => {
       if (loc) {
@@ -22,6 +22,10 @@ export class LocationService {
 
   private getCurrentLocationMock(): Promise<Location> {
     return Promise.resolve({latitude: 32.0972303, longitude: 34.77386999999999}); //wix
+  }
+
+  getCurrentLocation(): Promise<Location> {
+    return this.getCurrentLocationMock();
   }
 
   getDistanceFromCurrentLocation(location: Location) {
