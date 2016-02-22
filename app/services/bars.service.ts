@@ -28,11 +28,11 @@ export class BarsService {
     this.happyHourApi.getBarsFromDB(this.onBarFetched.bind(this));
   }
 
-  getBarDistance(barDto) {
-    return this.location.getDistanceFromCurrentLocation(barDto.location);
+  getBarDistance(bar: BarDto) {
+    return this.location.getDistanceFromCurrentLocation(bar.location);
   }
 
-  addBar(id: string, name: string, url: string, location: Location) {
-    this.happyHourApi.saveBar(new BarDto(id, name, url, location, 0));
+  saveBar(bar: BarDto) {
+    this.happyHourApi.saveBar(bar);
   }
 }

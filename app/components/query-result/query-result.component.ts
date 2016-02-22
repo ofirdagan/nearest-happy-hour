@@ -3,6 +3,7 @@ import {BarsService} from "../../services/bars.service";
 import {Bar} from "../../model/model";
 import {PageManager} from "../../services/page-manager.service";
 import {PAGE} from "../../services/page-manager.service";
+import {BarDto} from "../../model/model";
 
 @Component({
   selector: "QueryResult",
@@ -21,7 +22,7 @@ export class QueryResult{
 
   addBar() {
     let data = this.data;
-    this.barsService.addBar(data.id, data.name, data.picture.data.url, {latitude: data.location.latitude, longitude: data.location.longitude});
-    this.pageManager.goTo(PAGE.list);
+    let barDto = new BarDto(data.id, data.name, data.picture.data.url, {latitude: data.location.latitude, longitude: data.location.longitude}, 0);
+    this.pageManager.goTo(PAGE.editBar, {bar: barDto});
   }
 }

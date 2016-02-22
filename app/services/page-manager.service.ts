@@ -2,19 +2,26 @@ import {Injectable} from 'angular2/core';
 
 export enum PAGE {
   list,
-  addBar
+  addBar,
+  editBar
 }
 
 
 @Injectable()
 export class PageManager {
   private page: PAGE = PAGE.list;
+  private state;
 
   getCurrent(): PAGE {
     return this.page;
   }
 
-  goTo(page: PAGE) {
+  getState() {
+    return this.state;
+  }
+
+  goTo(page: PAGE, state?) {
     this.page = page;
+    this.state = state;
   }
 }
