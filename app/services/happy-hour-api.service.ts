@@ -11,8 +11,7 @@ export class HappyHourApi {
     return this.initFirebase().then(() => {
       return firebase.query((data) => onBarFetched(<BarDto>(data.value)), '/bars', {
         orderBy: {
-          type: firebase.QueryOrderByType.CHILD,
-          value: 'name' // mandatory when type is 'child'
+          type: firebase.QueryOrderByType.KEY
         }
       });
     });

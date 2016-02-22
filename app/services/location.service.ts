@@ -21,7 +21,7 @@ export class LocationService {
   }
 
   private getCurrentLocationMock(): Promise<Location> {
-    return Promise.resolve({latitude: 32.0972303, longitude: 34.77386999999999}); //wix
+    return Promise.resolve({latitude: 32.066649, longitude: 34.774953}); //maze 21
   }
 
   getCurrentLocation(): Promise<Location> {

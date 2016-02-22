@@ -11,7 +11,7 @@ import {OrderBy} from "../pipes/order-by.pipe";
   pipes: [OrderBy],
   template: `
 <StackLayout orientation="vertical">
-  <Bar class="bar-item" *ngFor="#bar of barsService.bars | orderBy:'distance':true" [bar]="bar"></Bar>
+  <Bar class="bar-item" *ngFor="#bar of barsService.bars | orderBy:'distance':false" [bar]="bar"></Bar>
 </StackLayout>
 `,
 })

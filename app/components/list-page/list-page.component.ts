@@ -6,14 +6,12 @@ import {PageManager, PAGE} from "../../services/page-manager.service";
   selector: "ListPage",
   directives: [BarListComponent],
   template: `
-<GridLayout rows="auto, *">
-  <ScrollView>
-    <BarList></BarList>
-  </ScrollView>
-  <AbsoluteLayout row="1" cssClass="fabContainer" >
-    <Image src="res://fab_add" (tap)="addBar()" cssClass="fab" ></Image>
-  </AbsoluteLayout>
-</GridLayout>
+<ScrollView>
+  <BarList></BarList>
+</ScrollView>
+<AbsoluteLayout row="1" cssClass="fabContainer" >
+  <Image src="res://fab_add" (tap)="addBar()" cssClass="fab" ></Image>
+</AbsoluteLayout>
 `
 })
 export class ListPage {

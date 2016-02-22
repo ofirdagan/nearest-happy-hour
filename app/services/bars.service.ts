@@ -19,7 +19,7 @@ export class BarsService {
       let bar = new Bar(barDto.id, barDto.name, barDto.imageUrl, barDto.location, barDto.rating, distance);
       this.ngZone.run(() => {
         console.log('onBarFetched: ', barDto.name);
-        this.bars.push(bar);
+        this.bars = this.bars.concat(bar);
       });
     });
   }
