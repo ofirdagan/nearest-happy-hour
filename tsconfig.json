@@ -24,6 +24,7 @@
     "app/components/bar.component.ts",
     "app/components/list-page/list-page.component.ts",
     "app/components/edit-bar-page/edit-bar-page.component.ts",
+    "app/components/bars-map-page/bars-map-page.component.ts",
     "app/components/add-bar/add-bar.page.component.ts",
     "app/components/query-result/query-result.component.ts",
     "app/pipes/distance-renderer.pipe.ts",

@@ -3,13 +3,14 @@ import {Injectable} from 'angular2/core';
 export enum PAGE {
   list,
   addBar,
-  editBar
+  editBar,
+  barsMap
 }
 
 
 @Injectable()
 export class PageManager {
-  private page: PAGE = PAGE.list;
+  private page: PAGE = PAGE.barsMap;
   private state;
 
   getCurrent(): PAGE {
