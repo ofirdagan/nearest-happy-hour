@@ -9,11 +9,11 @@ import {BarsMapPage} from "./components/bars-map-page/bars-map-page.component";
   selector: "my-app",
   directives: [ListPage, AddBarPage, EditBarPage, BarsMapPage],
   template: `
-<GridLayout rows="*">
-  <ListPage *ngIf="pageManager.getCurrent() === pages.list"></ListPage>
-  <AddBarPage *ngIf="pageManager.getCurrent() === pages.addBar"></AddBarPage>
-  <EditBarPage *ngIf="pageManager.getCurrent() === pages.editBar"></EditBarPage>
-  <BarsMapPage *ngIf="pageManager.getCurrent() === pages.barsMap"></BarsMapPage>
+<GridLayout rows="*" [ngSwitch]="pageManager.getCurrent()">
+  <AddBarPage *ngSwitchWhen="pages.addBar"></AddBarPage>
+  <EditBarPage *ngSwitchWhen="pages.editBar" [bar]="pageManager.getState().bar"></EditBarPage>
+  <BarsMapPage *ngSwitchWhen="pages.barsMap"></BarsMapPage>
+  <ListPage *ngSwitchDefault></ListPage>
 </GridLayout>
 `
 })

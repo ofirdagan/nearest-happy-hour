@@ -1,4 +1,4 @@
-import {Injectable} from 'angular2/core';
+import {Injectable, NgZone} from 'angular2/core';
 import {BarDto} from "../model/model";
 var firebase = require("nativescript-plugin-firebase");
 
@@ -7,9 +7,14 @@ var firebase = require("nativescript-plugin-firebase");
 export class HappyHourApi {
   private init = false;
 
+  constructor(private ngZone: NgZone) {
+  }
+
   getBarsFromDB(onBarFetched: (barDto: BarDto) => void) {
     return this.initFirebase().then(() => {
-      return firebase.query((data) => onBarFetched(<BarDto>(data.value)), '/bars', {
+      return firebase.query(data => {
+        this.ngZone.run(() => onBarFetched(<BarDto>(data.value)));
+      }, '/bars', {
         orderBy: {
           type: firebase.QueryOrderByType.KEY
         }

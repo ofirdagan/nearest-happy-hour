@@ -1,4 +1,4 @@
-import {Component, OnInit} from "angular2/core";
+import {Component, OnInit, Input} from "angular2/core";
 import {PageManager, PAGE} from "../../services/page-manager.service";
 import {BarsService} from "../../services/bars.service";
 import {BarDto} from "../../model/model";
@@ -16,13 +16,11 @@ var mapbox = require("nativescript-mapbox");
 `
 })
 export class EditBarPage implements OnInit {
-  bar: BarDto;
+  @Input() bar: BarDto;
 
   constructor(private pageManager: PageManager,
               private locationService: LocationService,
               private barsService: BarsService) {
-    this.bar = <BarDto>(pageManager.getState().bar);
-
     //this.bar = {
     //  "id": "1",
     //  "name": "HaNevihim",
