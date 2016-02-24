@@ -21,14 +21,15 @@ export class EditBarPage implements OnInit {
   constructor(private pageManager: PageManager,
               private locationService: LocationService,
               private barsService: BarsService) {
-    //this.bar = <BarDto>(pageManager.getState().bar);
-    this.bar = {
-      "id": "1",
-      "name": "HaNevihim",
-      "imageUrl": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpf1/v/t1.0-1/p320x320/10978579_10153597627499167_7655655462103556409_n.jpg?oh=83de21a20a459d95f2d23d6bb50ec0df&oe=576D3EFE&__gda__=1465715334_18ff22e44987e5fab3161875087270fb",
-      "location": {"latitude": 32.095035, "longitude": 34.778269},
-      "rating": 4
-    };
+    this.bar = <BarDto>(pageManager.getState().bar);
+
+    //this.bar = {
+    //  "id": "1",
+    //  "name": "HaNevihim",
+    //  "imageUrl": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpf1/v/t1.0-1/p320x320/10978579_10153597627499167_7655655462103556409_n.jpg?oh=83de21a20a459d95f2d23d6bb50ec0df&oe=576D3EFE&__gda__=1465715334_18ff22e44987e5fab3161875087270fb",
+    //  "location": {"latitude": 32.095035, "longitude": 34.778269},
+    //  "rating": 4
+    //};
   }
 
   ngOnInit() {
@@ -44,8 +45,8 @@ export class EditBarPage implements OnInit {
       margins: {
         left: 0, // default 0
         right: 0, // default 0
-        top: 0, // default 0
-        bottom: 200 // default 0
+        top: 200, // default 0
+        bottom: 0 // default 0
       },
       center: { // optional without a default
         lat: this.bar.location.latitude,
@@ -79,6 +80,7 @@ export class EditBarPage implements OnInit {
 
 
   saveBar() {
+    mapbox.hide();
     this.barsService.saveBar(this.bar);
     this.pageManager.goTo(PAGE.list);
   }

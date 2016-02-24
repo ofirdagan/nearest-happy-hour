@@ -1,9 +1,6 @@
 {
   "nativescript": {
     "id": "org.nativescript.helloworldng",
-    "tns-ios": {
-      "version": "1.5.2"
-    },
     "tns-android": {
       "version": "1.5.1"
     }
@@ -31,7 +28,7 @@
   "homepage": "http://nativescript.org",
   "dependencies": {
     "angular2": "2.0.0-beta.2",
-    "firebase": "^2.4.1",
+    "debounce": "^1.0.0",
     "geolib": "^2.0.18",
     "lodash": "^4.5.0",
     "nativescript-angular": "0.0.27",
@@ -50,6 +47,6 @@
   "devDependencies": {
     "nativescript-dev-typescript": "^0.2.2",
     "shelljs": "^0.5.3",
-    "typescript": "^1.7.5"
+    "typescript": "1.7.5"
   }
 }

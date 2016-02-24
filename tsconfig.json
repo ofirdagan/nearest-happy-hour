@@ -1,42 +1,43 @@
 {
-  "compilerOptions": {
-    "outDir": "app",
-    "rootDir": "app",
-    "module": "commonjs",
-    "target": "es5",
-    "inlineSourceMap": true,
-    "experimentalDecorators": true,
-    "removeComments": false,
-    "emitDecoratorMetadata": true,
-    "noEmitOnError": true
-  },
-  "files": [
-    "app/main.ts",
-    "app/compat.d.ts",
-    "app/app.component.ts",
-    "app/model/model.ts",
-    "app/mocks/mock-bars.ts",
-    "app/services/bars.service.ts",
-    "app/services/location.service.ts",
-    "app/services/page-manager.service.ts",
-    "app/services/happy-hour-api.service.ts",
-    "app/components/bar-list.component.ts",
-    "app/components/bar.component.ts",
-    "app/components/list-page/list-page.component.ts",
-    "app/components/edit-bar-page/edit-bar-page.component.ts",
-    "app/components/bars-map-page/bars-map-page.component.ts",
-    "app/components/add-bar/add-bar.page.component.ts",
-    "app/components/query-result/query-result.component.ts",
-    "app/pipes/distance-renderer.pipe.ts",
-    "app/pipes/order-by.pipe.ts",
-    "node_modules/tns-core-modules/tns-core-modules.d.ts"
-  ],
-  "filesGlob": [
-    "node_modules/tns-core-modules/tns-core-modules.d.ts",
-    "app/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "platforms"
-  ]
+    "compilerOptions": {
+        "outDir": "app",
+        "rootDir": "app",
+        "module": "commonjs",
+        "target": "es5",
+        "inlineSourceMap": true,
+        "experimentalDecorators": true,
+        "removeComments": false,
+        "emitDecoratorMetadata": true,
+        "noEmitOnError": true
+    },
+    "files": [
+        "app/main.ts",
+        "app/compat.d.ts",
+        "app/app.component.ts",
+        "app/model/model.ts",
+        "app/mocks/mock-bars.ts",
+        "app/services/bars.service.ts",
+        "app/services/location.service.ts",
+        "app/services/page-manager.service.ts",
+        "app/services/happy-hour-api.service.ts",
+        "app/components/bar-list.component.ts",
+        "app/components/bar.component.ts",
+        "app/components/tabs.component.ts",
+        "app/components/list-page/list-page.component.ts",
+        "app/components/edit-bar-page/edit-bar-page.component.ts",
+        "app/components/bars-map-page/bars-map-page.component.ts",
+        "app/components/add-bar/add-bar.page.component.ts",
+        "app/components/query-result/query-result.component.ts",
+        "app/pipes/distance-renderer.pipe.ts",
+        "app/pipes/order-by.pipe.ts",
+        "node_modules/tns-core-modules/tns-core-modules.d.ts"
+    ],
+    "filesGlob": [
+        "node_modules/tns-core-modules/tns-core-modules.d.ts",
+        "app/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "platforms"
+    ]
 }

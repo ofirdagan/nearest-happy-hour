@@ -5,6 +5,7 @@ import {BarDto} from "../../model/model";
 import {LocationService} from "../../services/location.service";
 import {Bar} from "../../model/model";
 import {Location} from "../../model/model";
+import {Tabs} from "../tabs.component";
 var mapbox = require("nativescript-mapbox");
 
 interface BarMarker {
@@ -16,8 +17,9 @@ interface BarMarker {
 
 @Component({
   selector: "BarsMapPage",
-  directives: [],
+  directives: [Tabs],
   template: `
+  <Tabs></Tabs>
 `
 })
 export class BarsMapPage implements OnInit {
@@ -57,7 +59,7 @@ export class BarsMapPage implements OnInit {
       margins: {
         left: 0, // default 0
         right: 0, // default 0
-        top: 0, // default 0
+        top: 100, // default 0
         bottom: 0 // default 0
       },
       center: { // optional without a default

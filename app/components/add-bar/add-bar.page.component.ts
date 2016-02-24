@@ -9,13 +9,12 @@ var debounce = require("debounce");
   directives: [QueryResult],
   template: `
 <StackLayout orientation="vertical">
-  <TextField hint="Search for your bar" [(ngModel)]="barName" (ngModelChange)="onChange($event)"></TextField>
+  <TextField hint="Search for your bar" [ngModel]="''" (ngModelChange)="onChange($event)"></TextField>
   <QueryResult class="query-result-item" *ngFor="#result of queryResults" [data]="result"></QueryResult>
 </StackLayout>
 `
 })
 export class AddBarPage {
-  public barName: string;
   public queryResults;
 
   constructor(private locationService: LocationService) {

@@ -10,7 +10,7 @@ export enum PAGE {
 
 @Injectable()
 export class PageManager {
-  private page: PAGE = PAGE.barsMap;
+  private page: PAGE = PAGE.list;
   private state;
 
   getCurrent(): PAGE {

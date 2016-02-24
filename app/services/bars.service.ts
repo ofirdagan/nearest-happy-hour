@@ -25,7 +25,7 @@ export class BarsService {
   }
 
   fetchBars(): void {
-    this.happyHourApi.getBarsFromDB(this.onBarFetched.bind(this));
+    this.happyHourApi.getBarsFromDB((barDto) => this.onBarFetched(barDto));
   }
 
   getBarDistance(bar: BarDto) {
