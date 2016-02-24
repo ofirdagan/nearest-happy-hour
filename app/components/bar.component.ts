@@ -1,4 +1,4 @@
-import {Component, Input} from "angular2/core";
+import {Component, Input, Output, EventEmitter} from "angular2/core";
 import {Bar} from "../model/model"
 import {LocationService} from "../services/location.service"
 import {DistanceRendererPipe} from "../pipes/distance-renderer.pipe";
@@ -8,7 +8,7 @@ import {DistanceRendererPipe} from "../pipes/distance-renderer.pipe";
   providers: [LocationService],
   pipes: [DistanceRendererPipe],
   template: `
-<GridLayout columns="auto, *, auto" rows="auto" cssClass="bar-item">
+<GridLayout columns="auto, *, auto" rows="auto" cssClass="bar-item" (tap)="onTap()">
     <Image col="0" [src]="bar.imageUrl" class="bar-icon"></Image>
     <Label col="1" [text]="bar.name" class="bar-title"></Label>
     <Label col="2" [text]="bar.distance | distanceRenderer"></Label>
@@ -17,4 +17,9 @@ import {DistanceRendererPipe} from "../pipes/distance-renderer.pipe";
 })
 export class BarComponent{
   @Input() bar: Bar;
+  @Output() onBarTap: EventEmitter<any> = new EventEmitter();
+
+  onTap() {
+    this.onBarTap.emit(this.bar);
+  }
 }

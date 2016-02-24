@@ -36,7 +36,7 @@ export class BarsMapPage implements OnInit {
           this.showMap(location, this.buildMarkers());
         });
       });
-    }, 5000);
+    }, 100);
   }
 
   buildMarkers(): BarMarker[] {

@@ -16,7 +16,7 @@ export class BarsService {
 
   onBarFetched(barDto: BarDto) {
     this.getBarDistance(barDto).then((distance) => {
-      let bar = new Bar(barDto.id, barDto.name, barDto.imageUrl, barDto.location, barDto.rating, distance);
+      let bar = new Bar(barDto, distance);
       console.log('onBarFetched: ', barDto.name);
       this.bars = this.bars.concat(bar);
     });

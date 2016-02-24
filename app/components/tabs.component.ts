@@ -7,9 +7,11 @@ var mapbox = require("nativescript-mapbox");
   providers: [],
   pipes: [],
   template: `
-<GridLayout columns="auto, auto">
+<GridLayout rows="60, *">
+  <GridLayout row="0", columns="auto, auto",>
     <Button text="List" col="0" (tap)="goToList()"></Button>
     <Button text="Map" col="1" (tap)="pageManager.goTo(pages.barsMap)"></Button>
+  <GridLayout columns="auto, auto", rows="100, *">
 </GridLayout>
 `
 })

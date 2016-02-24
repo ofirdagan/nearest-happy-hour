@@ -22,7 +22,7 @@ export class QueryResult{
 
   addBar() {
     let data = this.data;
-    let barDto = new BarDto(data.id, data.name, data.picture.data.url, {latitude: data.location.latitude, longitude: data.location.longitude}, 0);
+    let barDto = new BarDto(data.id, data.name, data.picture.data.url, {latitude: data.location.latitude, longitude: data.location.longitude}, 0, data.phone, '');
     this.pageManager.goTo(PAGE.editBar, {bar: barDto});
   }
 }

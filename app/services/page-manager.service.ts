@@ -1,4 +1,4 @@
-import {Injectable} from 'angular2/core';
+import {Injectable, NgZone} from 'angular2/core';
 
 export enum PAGE {
   list,
@@ -13,6 +13,8 @@ export class PageManager {
   private page: PAGE = PAGE.list;
   private state;
 
+  constructor(private ngZone: NgZone) {}
+
   getCurrent(): PAGE {
     return this.page;
   }
@@ -22,7 +24,9 @@ export class PageManager {
   }
 
   goTo(page: PAGE, state?) {
-    this.page = page;
-    this.state = state;
+    this.ngZone.run(() => {
+      this.page = page;
+      this.state = state;
+    });
   }
 }
